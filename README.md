@@ -1,3 +1,11 @@
+# GiveItAwayNow App
+####HTML5, CSS, Sass, JSON Server, JavaScript, React
+
+Old things/recycle sharing application.
+
+
+
+#
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
