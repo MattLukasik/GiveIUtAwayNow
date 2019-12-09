@@ -1,5 +1,5 @@
 # GiveItAwayNow App
-####HTML5, CSS, Sass, JSON Server, JavaScript, React
+#### HTML5, CSS, Sass, JSON Server, JavaScript, React
 
 Old things/recycle sharing application.
 
