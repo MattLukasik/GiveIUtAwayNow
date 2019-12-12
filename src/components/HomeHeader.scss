@@ -1,0 +1,60 @@
+.container.header {
+  padding-right: 142px;
+  position: absolute;
+  right: 0;
+
+  .homeHeader {
+    margin-top: 37px;
+
+    .logReg {
+      display: flex;
+      justify-content: flex-end;
+
+      .logRegLi {
+        padding: 9px 20px;
+        margin: 0.75px;
+
+        &:hover {
+          border: 0.75px solid var(--yellow);
+          margin: 0;
+
+        }
+
+        .login {
+          font-size: 0.875rem;
+          text-decoration: none;
+          color: var(--grey);
+        }
+
+        .register {
+          font-size: 0.813rem;
+          text-decoration: none;
+          color: var(--grey);
+        }
+      }
+    }
+
+    .nav {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 1.125rem;
+      line-height: 1.5rem;
+      margin-top: 17px;
+
+      .navEl {
+        padding: 9px 20px;
+        margin: 0.75px;
+
+        &:hover {
+          border: 0.75px solid var(--darkgrey);
+          margin: 0;
+        }
+
+        .navElText {
+          text-decoration: none;
+          color: var(--darkgrey);
+        }
+      }
+    }
+  }
+}

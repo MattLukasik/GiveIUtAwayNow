@@ -2,6 +2,10 @@
 @import "./settings/fonts";
 @import "./settings/colors";
 
+
+
 body {
   font-family: var(--Font-base);
+  box-sizing: border-box;
+  max-width: 1900px;
 }

@@ -1,0 +1,45 @@
+.container.main {
+  height: 963px;
+  background-repeat: no-repeat;
+  background-image: url("../assets/Home-Hero-Image.jpg");
+  background-position-x: -483px;
+  background-size: contain;
+  display: flex;
+
+
+  .main_content {
+    width: 672px;
+    //align-self: center;
+    justify-content: center;
+
+    .main_content_lead {
+      font-size: 2.375rem;
+      color: var(--darkgrey);
+      letter-spacing: -0.67px;
+      text-align: center;
+    }
+
+    .main_content_dec {
+      width: 253px;
+      height: 33px;
+      margin: 0 auto;
+      background-image: url("../assets/Decoration.svg");
+    }
+
+    .main_content_widgets {
+
+      .main_btn_widget {
+        font-size: 2.250rem;
+        font-weight: 300;
+        color: var(--grey);
+        text-transform: uppercase;
+        border: none;
+        background-color: transparent;
+        text-decoration: none;
+        display: inline-block;
+
+      }
+    }
+  }
+
+}
