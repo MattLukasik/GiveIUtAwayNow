@@ -36,7 +36,7 @@ class HomeFourSteps extends Component {
                         <p className="stepText">kurier przyjedzie<br/>w dogodnym terminie</p>
                     </div>
                 </div>
-                <Link to="./login">
+                <Link to="./login" className="link">
                     <button className="main_btn_widget">Oddaj<br/>rzeczy</button>
                 </Link>
             </div>

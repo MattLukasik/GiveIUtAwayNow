@@ -64,19 +64,23 @@
     }
   }
 
-  .main_btn_widget {
-    font-family: var(--Font-base);
-    font-size: 2.250rem;
-    line-height: 2.813rem;
-    font-weight: 300;
-    color: var(--grey);
-    text-transform: uppercase;
-    border: 0.75px solid var(--grey);
-    background-color: transparent;
-    cursor: pointer;
-    width: 310px;
-    height: 120px;
+  .link {
+    text-decoration: none;
 
-    margin: 35px 0 80px 795px;
+    .main_btn_widget {
+      font-family: var(--Font-base);
+      font-size: 2.250rem;
+      line-height: 2.813rem;
+      font-weight: 300;
+      color: var(--grey);
+      text-transform: uppercase;
+      border: 0.75px solid var(--grey);
+      background-color: transparent;
+      cursor: pointer;
+      width: 310px;
+      height: 120px;
+      display: block;
+      margin: 35px auto 80px;
+    }
   }
 }
