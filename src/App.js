@@ -11,6 +11,7 @@ import * as Scroll from 'react-scroll';
 import Home from './components/Home'
 import Login from './components/Login'
 import Register from './components/Register'
+import HomeThreeColumns from "./components/HomeThreeColumns";
 
 
 function App() {

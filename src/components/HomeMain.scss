@@ -32,6 +32,7 @@
 
       .main_content_widgets {
 
+
         .main_btn_widget {
           font-size: 2.250rem;
           line-height: 2.813rem;
@@ -45,19 +46,18 @@
 
         }
         .main_btn_widget.left {
-          padding: 13px 93px;
-          margin-right: 44px;
+          width: 310px;
+          height: 120px;
+          margin-right: 65px;
         }
         .main_btn_widget.right {
-          padding: 13px 50.5px;
+          width: 310px;
+          height: 120px;
         }
 
       }
     }
 
   }
-
-
-
 
 }
