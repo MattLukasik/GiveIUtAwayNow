@@ -22,12 +22,10 @@ class Home extends Component {
             <HomeMain/>
             <HomeThreeColumns/>
             <HomeFourSteps/>
+            <HomeAbout/>
             </>
         )
     }
 }
-
-
-
 
 export default Home;

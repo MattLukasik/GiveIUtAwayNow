@@ -34,7 +34,15 @@ class HomeHeader extends Component {
                                 >O co chodzi?</Link>
                             </li>
                             <li className="navEl">
-                                <a href="" className="navElText">O nas</a>
+                                <Link
+                                    className="navElText"
+                                    activeClass="active"
+                                    to="HomeAbout"
+                                    spy={true}
+                                    smooth={true}
+                                    offset={-70}
+                                    duration= {1000}
+                                >O nas</Link>
                             </li>
                             <li className="navEl">
                                 <a href="" className="navElText">Fundacja i organizacje</a>
