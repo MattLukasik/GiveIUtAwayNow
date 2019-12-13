@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
-import {
-    HashRouter,
-    Route,
-    Link,
-    Switch,
-    NavLink,
-} from 'react-router-dom';
+import {HashRouter, Route, Link, Switch, NavLink,} from 'react-router-dom';
 import * as Scroll from 'react-scroll';
 // import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 import Home from './components/Home'

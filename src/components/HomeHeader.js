@@ -1,11 +1,6 @@
 import React, {Component} from 'react';
-import {
-    HashRouter,
-    Route,
-    Link,
-    Switch,
-    NavLink,
-} from 'react-router-dom';
+import {HashRouter, Route, Link as LinkR, Switch, NavLink,} from 'react-router-dom';
+import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 import './HomeHeader.scss';
 
 class HomeHeader extends Component {
@@ -17,10 +12,10 @@ class HomeHeader extends Component {
                     <div className="homeHeader">
                         <ul className="logReg">
                             <li className="logRegLi">
-                                <Link to="/login" className="login">Zaloguj</Link>
+                                <LinkR to="/login" className="login">Zaloguj</LinkR>
                             </li>
                             <li className="logRegLi">
-                                <Link to="/register" className="register">Załóż konto</Link>
+                                <LinkR to="/register" className="register">Załóż konto</LinkR>
                             </li>
                         </ul>
                         <ul className="nav">
@@ -28,7 +23,15 @@ class HomeHeader extends Component {
                                 <a href="" className="navElText">Start</a>
                             </li>
                             <li className="navEl">
-                                <a href="" className="navElText">O co chodzi?</a>
+                                <Link
+                                    className="navElText"
+                                    activeClass="active"
+                                    to="HomeFourSteps"
+                                    spy={true}
+                                    smooth={true}
+                                    offset={-70}
+                                    duration= {1000}
+                                >O co chodzi?</Link>
                             </li>
                             <li className="navEl">
                                 <a href="" className="navElText">O nas</a>

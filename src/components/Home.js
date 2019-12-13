@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
 import HomeAbout from './HomeAbout';
 import HomeContact from './HomeContact';

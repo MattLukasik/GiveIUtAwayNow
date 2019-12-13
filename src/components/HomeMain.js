@@ -1,15 +1,8 @@
 import React, {Component} from 'react';
-import {
-    HashRouter,
-    Route,
-    Link,
-    Switch,
-    NavLink,
-} from 'react-router-dom';
+import {Link as LinkR} from 'react-router-dom';
 import './HomeMain.scss';
 
 class HomeMain extends Component {
-    ntent
 
     render() {
         return (
@@ -21,12 +14,12 @@ class HomeMain extends Component {
                         </p>
                         <div className="main_content_dec"></div>
                         <div className="main_content_widgets">
-                            <Link to="./login">
+                            <LinkR to="./login">
                                 <button className="main_btn_widget left">Oddaj<br/>rzeczy</button>
-                            </Link>
-                            <Link to="./login">
+                            </LinkR>
+                            <LinkR to="./login">
                                 <button className="main_btn_widget right">Zorganizuj<br/>zbiórkę</button>
-                            </Link>
+                            </LinkR>
                         </div>
                     </div>
                 </div>

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import './HomeFourSteps.scss';
-import {Link} from "react-router-dom";
+import {Link as LinkR} from "react-router-dom";
 
 class HomeFourSteps extends Component {
 
 
     render() {
         return (
-            <div className="container fourSteps">
+            <div className="container fourSteps" id="HomeFourSteps">
                 <h2 className="fourStepHeader">Wystarczą 4 proste kroki</h2>
                 <div className="fourStep_content_dec"></div>
                 <div className="fourStepsDiv">
@@ -36,9 +36,9 @@ class HomeFourSteps extends Component {
                         <p className="stepText">kurier przyjedzie<br/>w dogodnym terminie</p>
                     </div>
                 </div>
-                <Link to="./login" className="link">
+                <LinkR to="./login" className="link">
                     <button className="main_btn_widget">Oddaj<br/>rzeczy</button>
-                </Link>
+                </LinkR>
             </div>
         )
     }

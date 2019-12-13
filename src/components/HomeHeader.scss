@@ -43,6 +43,7 @@
       .navEl {
         padding: 9px 20px;
         margin: 0.75px;
+        cursor: pointer;
 
         &:hover {
           border: 0.75px solid var(--darkgrey);
