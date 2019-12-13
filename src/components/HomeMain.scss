@@ -34,6 +34,7 @@
 
 
         .main_btn_widget {
+          font-family: var(--Font-base);
           font-size: 2.250rem;
           line-height: 2.813rem;
           font-weight: 300;
@@ -41,7 +42,6 @@
           text-transform: uppercase;
           border: 0.75px solid var(--grey);
           background-color: transparent;
-          text-decoration: none;
           cursor: pointer;
 
         }

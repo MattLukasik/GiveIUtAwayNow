@@ -1,0 +1,82 @@
+.container.fourSteps {
+
+  .fourStepHeader {
+    font-size: 2.375rem;
+    letter-spacing: 0.67px;
+    color: var(--darkgrey);
+    margin: 56px 0 25px;
+    text-align: center;
+
+  }
+
+  .fourStep_content_dec {
+    background-image: url("../assets/Decoration.svg");
+    width: 253px;
+    height: 33px;
+    display: block;
+    margin: 0 auto 34px;
+  }
+
+  .fourStepsDiv {
+    display: flex;
+    background-color: var(--white);
+
+
+    .step {
+      margin: 73px auto 50px;
+
+      .stepIcon {
+        margin: 0 auto 8px;
+        width: 83px;
+        height: 83px;
+      }
+
+      .stepLead {
+        font-size: 1.125rem;
+        color: var(--darkgrey);
+        text-align: center;
+      }
+
+      .stepLine {
+        width: 70px;
+        height: 0;
+        border: 1px solid var(--grey);
+        margin: 8.5px auto;
+      }
+
+      .stepText {
+        font-size: 1rem;
+        text-align: center
+      }
+
+      .icon_1 {
+        background-image: url("../assets/Icon-1.svg");
+      }
+      .icon_2 {
+        background-image: url("../assets/Icon-2.svg");
+      }
+      .icon_3 {
+        background-image: url("../assets/Icon-3.svg");
+      }
+      .icon_4 {
+        background-image: url("../assets/Icon-4.svg");
+      }
+    }
+  }
+
+  .main_btn_widget {
+    font-family: var(--Font-base);
+    font-size: 2.250rem;
+    line-height: 2.813rem;
+    font-weight: 300;
+    color: var(--grey);
+    text-transform: uppercase;
+    border: 0.75px solid var(--grey);
+    background-color: transparent;
+    cursor: pointer;
+    width: 310px;
+    height: 120px;
+
+    margin: 35px 0 80px 795px;
+  }
+}

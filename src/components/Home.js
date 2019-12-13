@@ -20,6 +20,7 @@ class Home extends Component {
             <HomeHeader/>
             <HomeMain/>
             <HomeThreeColumns/>
+            <HomeFourSteps/>
             </>
         )
     }
