@@ -1,0 +1,89 @@
+.container.HomeContact {
+  background-image: url("../assets/Background-Contact-Form.jpg");
+  width: 100%;
+  height: 1026px;
+
+  .HomeContact_header {
+    font-size: 2.375rem;
+    line-height: 3.250rem;
+    letter-spacing: -0.76px;
+    color: var(--darkgrey);
+    display: inline-block;
+    margin: 200px 236px 25px 1306px;
+  }
+
+  .HomeContact_dec {
+    background-image: url("../assets/Decoration.svg");
+    width: 253px;
+    height: 33px;
+    margin: 0 288px 70px 1359px;
+
+  }
+
+  .contactForm {
+    margin: 280px 142px 219px 1230px;
+
+    .name_email {
+      display: flex;
+
+      .labelName {
+        width: 256px;
+        height: 62px;
+        display: block;
+
+        .nameText {
+
+        }
+      }
+
+      .labelEmail {
+        width: 256px;
+        height: 62px;
+        display: block;
+
+        .nameText {
+
+        }
+      }
+    }
+
+    .labelMessage {
+
+      .messageText {
+        display: block;
+
+      }
+    }
+
+    .btnMessage {
+    }
+  }
+
+  .footer {
+
+
+    .copyright {
+      font-size: 1.125rem;
+      color: var(--darkgrey);
+      display: block;
+      float: left;
+
+    }
+
+    .fb {
+      background-image: url("../assets/Facebook.svg");
+      width: 30px;
+      height: 30px;
+      float: right;
+
+    }
+
+    .insta {
+      background-image: url("../assets/Instagram.svg");
+      width: 30px;
+      height: 30px;
+      float: right;
+
+    }
+  }
+}

@@ -29,7 +29,7 @@ class HomeHeader extends Component {
                                     to="HomeFourSteps"
                                     spy={true}
                                     smooth={true}
-                                    offset={-70}
+                                    offset={0}
                                     duration= {1000}
                                 >O co chodzi?</Link>
                             </li>
@@ -40,7 +40,7 @@ class HomeHeader extends Component {
                                     to="HomeAbout"
                                     spy={true}
                                     smooth={true}
-                                    offset={-70}
+                                    offset={0}
                                     duration= {1000}
                                 >O nas</Link>
                             </li>
@@ -48,7 +48,15 @@ class HomeHeader extends Component {
                                 <a href="" className="navElText">Fundacja i organizacje</a>
                             </li>
                             <li className="navEl">
-                                <a href="" className="navElText">Kontak</a>
+                                <Link
+                                    className="navElText"
+                                    activeClass="active"
+                                    to="HomeContact"
+                                    spy={true}
+                                    smooth={true}
+                                    offset={0}
+                                    duration= {1000}
+                                >Kontakt</Link>
                             </li>
                         </ul>
                     </div>
