@@ -11,21 +11,25 @@ class HomeContact extends Component {
                 <form className="contactForm">
                     <div className="name_email">
                         <label htmlFor="" className="labelName">Wpisz swoje imię
-                            <input type="text" className="nameText"/>
+                            <input type="text" className="nameText" placeholder="Krzysztof"/>
                         </label>
                         <label htmlFor="" className="labelEmail">Wpisz swój email
-                            <input type="text" className="emailText"/>
+                            <input type="text" className="emailText" placeholder="abc@xyz.pl"/>
                         </label>
                     </div>
                     <label htmlFor="" className="labelMessage">Wpisz swoją wiadomość
-                        <input type="textarea" className="messageText"/>
+                        <textarea className="messageText"
+                                  placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
                     </label>
                     <button className="btnMessage">Wyślij</button>
                 </form>
                 <div className="footer">
+                    <div className="left_empty"></div>
                     <p className="copyright">Copyright by Coders Lab</p>
-                    <div className="fb"></div>
-                    <div className="insta"></div>
+                    <div className="fb_insta">
+                        <div className="fb"></div>
+                        <div className="insta"></div>
+                    </div>
                 </div>
             </div>
         )
