@@ -31,12 +31,12 @@
       border: none;
       align-self: center;
       background-color: transparent;
+      cursor: pointer;
+      outline: 0;
     }
-
     .orgBtn.active {
       border: 0.75px solid var(--darkgrey);
     }
-
 
     .orgBtn.fund {
       padding: 23px 42px;
@@ -117,6 +117,7 @@
         border: none;
         background-color: transparent;
         cursor: pointer;
+        outline: 0;
       }
       .btn_2 {
         font-family: var(--darkgrey);
