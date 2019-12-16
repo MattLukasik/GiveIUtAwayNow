@@ -112,43 +112,4 @@
       align-self: flex-end;
     }
   }
-
-  .footer {
-    display: flex;
-    justify-content: space-between;
-
-    .left_empty {
-      flex-basis: 25%;
-    }
-
-    .copyright {
-      font-size: 1.125rem;
-      color: var(--darkgrey);
-      align-self: center;
-      text-align: center;
-      flex-basis: 50%;
-
-    }
-
-    .fb_insta {
-      display: flex;
-      flex-basis: 25%;
-      align-self: end;
-
-      .fb {
-        background-image: url("../assets/Facebook.svg");
-        width: 30px;
-        height: 30px;
-
-      }
-
-      .insta {
-        background-image: url("../assets/Instagram.svg");
-        width: 30px;
-        height: 30px;
-        margin: 0 142px 0 20px;
-
-      }
-    }
-  }
 }

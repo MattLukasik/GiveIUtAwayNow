@@ -1,0 +1,32 @@
+.footer {
+  display: flex;
+  margin-top: -49px;
+
+  .copyright {
+    font-size: 1.125rem;
+    color: var(--darkgrey);
+    align-self: center;
+    text-align: center;
+    margin-left: 847px;
+  }
+
+  .fb_insta {
+    display: flex;
+    margin-left: 587px;
+
+    .fb {
+      background-image: url("../assets/Facebook.svg");
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
+
+    .insta {
+      background-image: url("../assets/Instagram.svg");
+      width: 30px;
+      height: 30px;
+      margin: 0 142px 0 20px;
+      cursor: pointer;
+    }
+  }
+}

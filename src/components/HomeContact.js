@@ -23,14 +23,6 @@ class HomeContact extends Component {
                     </label>
                     <button className="btnMessage">Wyślij</button>
                 </form>
-                <div className="footer">
-                    <div className="left_empty"></div>
-                    <p className="copyright">Copyright by Coders Lab</p>
-                    <div className="fb_insta">
-                        <div className="fb"></div>
-                        <div className="insta"></div>
-                    </div>
-                </div>
             </div>
         )
     }

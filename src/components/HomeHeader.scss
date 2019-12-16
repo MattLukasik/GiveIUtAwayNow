@@ -1,9 +1,10 @@
 .container.header {
-  padding-right: 142px;
+  position: relative;
   right: 0;
+  margin-bottom: -132px;
 
   .homeHeader {
-    margin-top: 37px;
+    margin: 37px 142px 0 0;
 
     .logReg {
       display: flex;

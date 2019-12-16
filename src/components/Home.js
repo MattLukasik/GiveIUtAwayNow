@@ -24,6 +24,7 @@ class Home extends Component {
             <HomeFourSteps/>
             <HomeAbout/>
             <HomeContact/>
+            <HomeFooter/>
             </>
         )
     }
