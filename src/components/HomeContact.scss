@@ -45,10 +45,16 @@
           border: 1px none #707070;
           border-bottom-style: solid;
           background-color: transparent;
+          outline: 0;
 
           &::placeholder {
             color: #3C3C3C26;
           }
+        }
+
+        .nameText.alert {
+          border: 1px none red;
+          border-bottom-style: solid;
         }
       }
 
@@ -67,10 +73,16 @@
           border: 1px none #707070;
           border-bottom-style: solid;
           background-color: transparent;
+          outline: 0;
 
           &::placeholder {
             color: #3C3C3C26;
           }
+        }
+
+        .emailText.alert {
+          border: 1px none red;
+          border-bottom-style: solid;
         }
       }
     }
@@ -93,10 +105,15 @@
         background-color: transparent;
         overflow: hidden;
         resize: none;
+        outline: 0;
 
         &::placeholder {
           color: #3C3C3C26;
         }
+      }
+      .messageText.alert {
+        border: 1px none red;
+        border-bottom-style: solid;
       }
     }
 
@@ -110,6 +127,13 @@
       background-color: transparent;
       width: 150px;
       align-self: flex-end;
+      cursor: pointer;
+      outline: 0;
+    }
+
+    .nameAlert {
+      font-size: 0.8rem;
+      color: red;
     }
   }
 }

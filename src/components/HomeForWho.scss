@@ -23,7 +23,6 @@
     width: 750px;
     margin-bottom: 80px;
 
-
     .orgBtn {
       font-family: var(--Font-base);
       font-size: 1.5rem;
@@ -34,22 +33,19 @@
       cursor: pointer;
       outline: 0;
     }
-    .orgBtn.active {
-      border: 0.75px solid var(--darkgrey);
-    }
-
     .orgBtn.fund {
       padding: 23px 42px;
     }
-
     .orgBtn.ngo {
       padding: 16px 42px;
       line-height: 1.5rem;
     }
-
     .orgBtn.local {
       padding: 16px 42px;
       line-height: 1.5rem;
+    }
+    .orgBtn.active {
+      border: 0.75px solid var(--darkgrey);
     }
   }
 
@@ -63,11 +59,11 @@
       margin-bottom: 66px;
     }
 
-    .orgList_fund {
+    .orgList {
       list-style: none;
       margin-bottom: 32px;
 
-      .fundLi {
+      .orgLi {
         display: flex;
         justify-content: space-between;
         width: 1344px;
@@ -76,30 +72,30 @@
 
         .name_mission_cont {
 
-          .fund_name {
+          .name {
             font-size: 1.625rem;
             color: var(--darkgrey);
             margin-bottom: 6px;
           }
-          .fund_mission {
+          .mission {
             font-size: 1.125rem;
             color: var(--darkgrey);
             margin-bottom: 31px;
           }
         }
 
-        .fund_collect {
+        .collect {
           font-size: 1.125rem;
           color: var(--darkgrey);
           margin: 15px 37px 48px 0;
         }
 
       }
-      .fundLi.third {
+      .orgLi.third {
         border: none;
       }
 
-      .fundLi.second {
+      .orgLi.second {
         margin-top: 34px;
         margin-bottom: 34px;
 
