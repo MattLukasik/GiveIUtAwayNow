@@ -45,7 +45,15 @@ class HomeHeader extends Component {
                                 >O nas</Link>
                             </li>
                             <li className="navEl">
-                                <a href="" className="navElText">Fundacja i organizacje</a>
+                                <Link
+                                    className="navElText"
+                                    activeClass="active"
+                                    to="HomeForWho"
+                                    spy={true}
+                                    smooth={true}
+                                    offset={0}
+                                    duration= {1000}
+                                >Fundacja i organizacje</Link>
                             </li>
                             <li className="navEl">
                                 <Link

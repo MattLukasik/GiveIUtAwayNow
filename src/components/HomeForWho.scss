@@ -1,0 +1,136 @@
+.container.homeForWho {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .homeForWho_header {
+    font-size: 2.375rem;
+    color: var(--darkgrey);
+    margin: 70px 0 25px 0;
+    letter-spacing: -0.76px;
+  }
+
+  .forWho_dec {
+    background-image: url("../assets/Decoration.svg");
+    width: 253px;
+    height: 33px;
+    margin-bottom: 50px;
+  }
+
+  .orgButtons {
+    display: flex;
+    justify-content: space-between;
+    width: 750px;
+    margin-bottom: 80px;
+
+
+    .orgBtn {
+      font-family: var(--Font-base);
+      font-size: 1.5rem;
+      color: var(--darkgrey);
+      border: none;
+      align-self: center;
+      background-color: transparent;
+    }
+
+    .orgBtn.active {
+      border: 0.75px solid var(--darkgrey);
+    }
+
+
+    .orgBtn.fund {
+      padding: 23px 42px;
+    }
+
+    .orgBtn.ngo {
+      padding: 16px 42px;
+      line-height: 1.5rem;
+    }
+
+    .orgBtn.local {
+      padding: 16px 42px;
+      line-height: 1.5rem;
+    }
+  }
+
+  .orgList_container {
+
+    .introText {
+      font-size: 1.375rem;
+      line-height: 1.875rem;
+      color: var(--darkgrey);
+      text-align: center;
+      margin-bottom: 66px;
+    }
+
+    .orgList_fund {
+      list-style: none;
+      margin-bottom: 32px;
+
+      .fundLi {
+        display: flex;
+        justify-content: space-between;
+        width: 1344px;
+        border: none;
+        border-bottom: 1px solid var(--grey);
+
+        .name_mission_cont {
+
+          .fund_name {
+            font-size: 1.625rem;
+            color: var(--darkgrey);
+            margin-bottom: 6px;
+          }
+          .fund_mission {
+            font-size: 1.125rem;
+            color: var(--darkgrey);
+            margin-bottom: 31px;
+          }
+        }
+
+        .fund_collect {
+          font-size: 1.125rem;
+          color: var(--darkgrey);
+          margin: 15px 37px 48px 0;
+        }
+
+      }
+      .fundLi.third {
+        border: none;
+      }
+
+      .fundLi.second {
+        margin-top: 34px;
+        margin-bottom: 34px;
+
+      }
+    }
+
+    .pagination_btns_fund {
+      text-align: center;
+      margin-bottom: 80px;
+
+      .btn_fund {
+        font-family: var(--darkgrey);
+        font-size: 1.125rem;
+        padding: 13px 15px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+      }
+      .btn_2 {
+        font-family: var(--darkgrey);
+        font-size: 1.125rem;
+        padding: 13px 15px;
+        margin-left: 17.5px;
+        margin-right: 17.5px;
+      }
+
+      .btn_fund.active {
+        border: 1px solid var(--grey);
+      }
+    }
+
+
+  }
+}

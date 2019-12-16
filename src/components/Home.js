@@ -23,6 +23,7 @@ class Home extends Component {
             <HomeThreeColumns/>
             <HomeFourSteps/>
             <HomeAbout/>
+            <HomeForWho/>
             <HomeContact/>
             <HomeFooter/>
             </>
