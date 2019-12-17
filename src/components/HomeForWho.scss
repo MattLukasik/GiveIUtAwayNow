@@ -126,6 +126,15 @@
       .btn_fund.active {
         border: 1px solid var(--grey);
       }
+      //.hidden {
+      //  display: none;
+      //}
+    }
+    .hidden {
+      display: none;
+    }
+    .unvisible {
+      visibility: hidden;
     }
 
 

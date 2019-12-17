@@ -1,0 +1,118 @@
+.container.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .loginHeader {
+    font-size: 2.500rem;
+    color: var(--darkgrey);
+    letter-spacing: 0.8px;
+    margin: 246px 0 25px 0;
+  }
+
+  .loginDec {
+    background-image: url("../assets/Decoration.svg");
+    width: 253px;
+    height: 33px;
+    margin-bottom: 60px;
+  }
+
+  .loginForm {
+    width: 504px;
+    display: flex;
+    flex-direction: column;
+
+    .name_password_cont {
+      width: 385px;
+      background-color: var(--white);
+      margin-bottom: 40px;
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+
+      .loginEmail {
+        display: block;
+        font-size: 1rem;
+        line-height: 1.375rem;
+        font-weight: 300;
+        font-family: var(--Font-base);
+        margin-top: 40px;
+
+
+        .loginEmailText {
+          display: block;
+          width: 250px;
+          height: 38px;
+          border: 1px none var(--grey);
+          border-bottom-style: solid;
+          background-color: transparent;
+          font-size: 1.1rem;
+          outline: 0;
+          color: var(--darkgrey);
+
+        }
+      }
+
+      .loginPassword {
+        font-size: 1rem;
+        line-height: 1.375rem;
+        font-weight: 300;
+        font-family: var(--Font-base);
+        margin-top: 31px;
+        margin-bottom: 40px;
+
+
+        .loginPasswordText {
+          display: block;
+          width: 250px;
+          height: 38px;
+          border: 1px none var(--grey);
+          border-bottom-style: solid;
+          background-color: transparent;
+          font-size: 1.1rem;
+          outline: 0;
+          color: var(--darkgrey);
+        }
+      }
+    }
+
+    .reg_log {
+      display: flex;
+      justify-content: space-between;
+
+      .reg {
+        font-size: 1.125rem;
+        font-family: var(--Font-base);
+        color: #000000;
+        padding: 13px 15px;
+        background-color: transparent;
+        border: none;
+        outline: 0;
+        margin: 0.75px;
+
+        &:hover {
+          border: 0.75px solid var(--darkgrey);
+          margin: 0;
+        }
+      }
+      .log {
+        font-size: 1.125rem;
+        font-family: var(--Font-base);
+        color: #000000;
+        padding: 13px 15px;
+        background-color: transparent;
+        border: none;
+        outline: 0;
+        margin: 0.75px;
+
+        &:hover {
+          border: 0.75px solid var(--darkgrey);
+          margin: 0;
+        }
+      }
+    }
+  }
+
+}
