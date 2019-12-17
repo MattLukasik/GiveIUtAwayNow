@@ -29,7 +29,7 @@ class HomeContact extends Component {
         let resultMessage;
 
         //pole imienia
-        if (this.state.name === "") {
+        if (this.state.name === "" || /\S+\s\S+/.test(this.state.name)) {
             resultName = <span className="nameAlert">Podane imię jest nieprawidłowe!</span>
         }
         this.setState({
@@ -37,15 +37,15 @@ class HomeContact extends Component {
         });
 
         // pole emaila
-        if (this.state.email === "") {
-            resultEmail = <span className="nameAlert">Podane email jest nieprawidłowy!</span>
+        if (this.state.email === "" || !/\S+\S+@\S+\S+\.\S+\S+/.test(this.state.email)) {
+            resultEmail = <span className="nameAlert">Podany email jest nieprawidłowy!</span>
         }
         this.setState({
             emailAlert: resultEmail
         });
 
         //pole wiadomości
-        if (this.state.message === "") {
+        if (this.state.message.length < 120) {
             resultMessage = <span className="nameAlert">Wiadomość musi mieć conajmniej 120 znaków!</span>
         }
         this.setState({
@@ -74,10 +74,11 @@ class HomeContact extends Component {
                         <label htmlFor="" className="labelEmail">Wpisz swój email
                             <input className={`emailText ${this.state.emailAlert ? "alert" : ""}`}
                                    placeholder="abc@xyz.pl"
-                                   type="email"
+                                   type="text"
                                    name="email"
                                    value={this.state.email}
-                                   onChange={this.handleChange}/>
+                                   onChange={this.handleChange}
+                            />
                             {this.state.emailAlert}
                         </label>
                     </div>
