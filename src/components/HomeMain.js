@@ -23,10 +23,7 @@ class HomeMain extends Component {
                         </div>
                     </div>
                 </div>
-
-
             </div>
-
         )
     }
 }

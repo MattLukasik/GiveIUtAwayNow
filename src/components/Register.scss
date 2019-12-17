@@ -1,23 +1,23 @@
-.container.login {
+.container.register {
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  .loginHeader {
+  .registerHeader {
     font-size: 2.500rem;
     color: var(--darkgrey);
     letter-spacing: 0.8px;
     margin: 246px 0 25px 0;
   }
 
-  .loginDec {
+  .registerDec {
     background-image: url("../assets/Decoration.svg");
     width: 253px;
     height: 33px;
     margin-bottom: 60px;
   }
 
-  .loginForm {
+  .registerForm {
     width: 504px;
     display: flex;
     flex-direction: column;
@@ -32,16 +32,16 @@
       align-items: center;
 
 
-      .loginEmail {
+      .registerEmail {
         display: block;
         font-size: 1rem;
-        font-weight: 600;
         line-height: 1.375rem;
+        font-weight: 600;
         font-family: var(--Font-base);
         margin-top: 40px;
 
 
-        .loginEmailText {
+        .registerEmailText {
           display: block;
           width: 250px;
           height: 38px;
@@ -55,16 +55,37 @@
         }
       }
 
-      .loginPassword {
+      .registerPassword {
         font-size: 1rem;
         line-height: 1.375rem;
         font-weight: 600;
         font-family: var(--Font-base);
         margin-top: 31px;
+        margin-bottom: 31px;
+
+
+        .registerPasswordText {
+          display: block;
+          width: 250px;
+          height: 38px;
+          border: 1px none var(--grey);
+          border-bottom-style: solid;
+          background-color: transparent;
+          font-size: 1.1rem;
+          outline: 0;
+          color: var(--darkgrey);
+        }
+      }
+
+      .confirmPassword {
+        font-size: 1rem;
+        line-height: 1.375rem;
+        font-weight: 600;
+        font-family: var(--Font-base);
         margin-bottom: 40px;
 
 
-        .loginPasswordText {
+        .confirmPasswordText {
           display: block;
           width: 250px;
           height: 38px;
@@ -78,31 +99,30 @@
       }
     }
 
-    .reg_log {
+    .log_reg {
       display: flex;
       justify-content: space-between;
 
       .reg {
         font-size: 1.125rem;
         font-family: var(--Font-base);
-        font-weight: 300;
         color: #000000;
         padding: 13px 15px;
         background-color: transparent;
-        border: none;
+        border: 0.75px solid var(--darkgrey);
+        font-weight: 300;
         outline: 0;
         cursor: pointer;
       }
-
       .log {
         font-size: 1.125rem;
         font-family: var(--Font-base);
-        font-weight: 300;
         color: #000000;
         padding: 13px 15px;
         background-color: transparent;
+        font-weight: 300;
+        border: none;
         outline: 0;
-        border: 0.75px solid var(--darkgrey);
         cursor: pointer;
       }
     }
