@@ -20,7 +20,7 @@ class HomeHeader extends Component {
                         </ul>
                         <ul className="nav">
                             <li className="navEl">
-                                <a href="" className="navElText">Start</a>
+                                <LinkR to="/" className="navElText">Start</LinkR>
                             </li>
                             <li className="navEl">
                                 <Link

@@ -107,7 +107,7 @@ class HomeForWho extends Component {
                             <h2 className="introText">W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z<br/>którymi
                                 współpracujemy. Możesz sprawdzić czym się zajmują,<br/>komu pomagają i czego potrzebują.
                             </h2>
-                            <lu className="orgList fund">
+                            <ul className="orgList fund">
                                 {this.state.showFundPageOne && (
                                     <>
                                         <li className="orgLi first">
@@ -200,7 +200,7 @@ class HomeForWho extends Component {
                                         </li>
                                     </>
                                 )}
-                            </lu>
+                            </ul>
                             <div className="pagination_btns_fund">
                                 <button className={`btn_fund ${this.state.showFundPageOne ? "active" : ""}`} onClick={this.showFundPage1}>1</button>
                                 <button className={`btn_fund btn_2 ${this.state.showFundPageTwo ? "active" : ""}`} onClick={this.showFundPage2}>2</button>

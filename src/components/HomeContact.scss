@@ -20,6 +20,16 @@
 
   }
 
+  .nameSuccess {
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+    font-weight: 600;
+    color: green;
+    display: block;
+    text-align: center;
+    margin: 0 288px 0 1359px;
+  }
+
   .contactForm {
     margin: 70px 142px 270px 1230px;
     display: flex;
@@ -135,5 +145,6 @@
       font-size: 0.8rem;
       color: red;
     }
+
   }
 }

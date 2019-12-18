@@ -10,9 +10,11 @@ class HomeContact extends Component {
             message: "",
             nameAlert: "",
             emailAlert: "",
-            messageAlert: ""
+            messageAlert: "",
+            messageSuccess: ""
         }
     }
+
 //Walidacja formularza
 
     handleChange = (e) => {
@@ -21,44 +23,66 @@ class HomeContact extends Component {
         })
     };
 
+    //pole imienia
     handleSubmit = (e) => {
         e.preventDefault();
 
         let resultName;
         let resultEmail;
         let resultMessage;
+        let resultSuccess;
 
         //pole imienia
         if (this.state.name === "" || /\S+\s\S+/.test(this.state.name) || /\s/.test(this.state.name)) {
-            resultName = <span className="nameAlert">Podane imię jest nieprawidłowe!</span>
+            resultName = <span className="nameAlert">Podane imię jest nieprawidłowe!</span>;
         }
         this.setState({
-            nameAlert: resultName
+            nameAlert: resultName,
         });
 
         // pole emaila
         if (this.state.email === "" || !/\S+\S+@\S+\S+\.\S+\S+/.test(this.state.email)) {
-            resultEmail = <span className="nameAlert">Podany email jest nieprawidłowy!</span>
+            resultEmail = <span className="nameAlert">Podany email jest nieprawidłowy!</span>;
         }
         this.setState({
-            emailAlert: resultEmail
+            emailAlert: resultEmail,
         });
 
         //pole wiadomości
         if (this.state.message.length < 120) {
-            resultMessage = <span className="nameAlert">Wiadomość musi mieć conajmniej 120 znaków!</span>
+            resultMessage = <span className="nameAlert">Wiadomość musi mieć conajmniej 120 znaków!</span>;
         }
         this.setState({
-            messageAlert: resultMessage
-        })
-    };
+            messageAlert: resultMessage,
+        });
 
+        if (!resultName && !resultEmail && !resultMessage){
+            resultSuccess =
+                <span className="nameSuccess">Wiadomość została wysłana!<br/>Wkrótce się skontaktujemy.</span>;
+
+            fetch("https://fer-api.coderslab.pl/v1/portfolio/contact",
+                {
+                    headers: {'Content-Type': 'application/json'},
+                    method: "POST",
+                    body: JSON.stringify({name: this.state.name, email: this.state.email, message: this.state.message})
+                })
+                .then(data => {
+                    console.log(data)
+                }).catch(err => {
+                console.log(err);
+            });
+            this.setState({
+                messageSuccess: resultSuccess
+            })
+        }
+    };
 
     render() {
         return (
             <div className="container HomeContact" id="HomeContact">
                 <h2 className="HomeContact_header">Skontaktuj się z nami</h2>
                 <div className="HomeContact_dec"></div>
+                {this.state.messageSuccess}
                 <form className="contactForm" onSubmit={this.handleSubmit}>
                     <div className="name_email">
                         <label htmlFor="" className="labelName">Wpisz swoje imię
