@@ -51,7 +51,10 @@
           font-size: 1.1rem;
           outline: 0;
           color: var(--darkgrey);
-
+        }
+        .registerEmailText.alert {
+          border: 1px none red;
+          border-bottom-style: solid;
         }
       }
 
@@ -75,6 +78,10 @@
           outline: 0;
           color: var(--darkgrey);
         }
+        .registerPasswordText.alert {
+          border: 1px none red;
+          border-bottom-style: solid;
+        }
       }
 
       .confirmPassword {
@@ -96,6 +103,14 @@
           outline: 0;
           color: var(--darkgrey);
         }
+        .confirmPasswordText.alert {
+          border: 1px none red;
+          border-bottom-style: solid;
+        }
+      }
+      .nameAlert {
+        font-size: 0.8rem;
+        color: red;
       }
     }
 

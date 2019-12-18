@@ -29,7 +29,7 @@ class HomeContact extends Component {
         let resultMessage;
 
         //pole imienia
-        if (this.state.name === "" || /\S+\s\S+/.test(this.state.name)) {
+        if (this.state.name === "" || /\S+\s\S+/.test(this.state.name) || /\s/.test(this.state.name)) {
             resultName = <span className="nameAlert">Podane imię jest nieprawidłowe!</span>
         }
         this.setState({
