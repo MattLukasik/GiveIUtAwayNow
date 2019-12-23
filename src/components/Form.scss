@@ -1,0 +1,630 @@
+.formIntroduction {
+  background-image: url("../assets/Form-Hero-Image.jpg");
+  background-repeat: no-repeat;
+  height: 853px;
+  display: flex;
+
+  .introduction {
+    margin: 257px 137px 141px 958px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .introHeader {
+      font-size: 2.375rem;
+      line-height: 3.438rem;
+      color: var(--darkgrey);
+      letter-spacing: -0.76px;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .formDec {
+      background-image: url("../assets/Decoration.svg");
+      width: 253px;
+      height: 33px;
+      margin-bottom: 19px;
+    }
+
+    .infoFourSteps {
+      font-size: 2.5rem;
+      color: var(--darkgrey);
+      margin-bottom: 26px;
+    }
+
+    .introFormSteps {
+      display: flex;
+
+      .introStep {
+        width: 190px;
+        height: 190px;
+        position: relative;
+        margin-left: -31.5px;
+
+        .rotateEmptyBox {
+          width: 134px;
+          height: 134px;
+          top: 27px;
+          left: 27px;
+          position: absolute;
+
+          border: 0.75px solid var(--darkgrey);
+          transform: rotate(45deg);
+
+        }
+
+        .stepNum {
+          font-size: 2rem;
+          line-height: 2.688rem;
+          color: var(--darkgrey);
+          text-align: center;
+          margin: 19px 0 10px 0;
+        }
+
+        .stepText {
+          font-size: 1.375rem;
+          line-height: 1.688rem;
+          color: var(--darkgrey);
+          text-align: center;
+          margin-bottom: 61px;
+        }
+
+      }
+
+      .introStepLeft {
+        margin-left: 0;
+      }
+
+    }
+  }
+}
+
+.formHeader {
+  background-color: var(--yellow);
+  display: flex;
+  flex-direction: column;
+  padding-left: 142px;
+  height: 179px;
+  justify-content: center;
+
+  .warnFormHeader {
+    font-size: 2.250rem;
+    font-weight: 600;
+    line-height: 3.063rem;
+    color: #000000;
+  }
+
+  .textFormHeader {
+    font-size: 1.375rem;
+    line-height: 1.875rem;
+    color: var(--darkgrey);
+  }
+}
+
+.formMainPart {
+  background-image: url("../assets/Background-Form.jpg");
+  height: 883px;
+
+  .formStep {
+    font-size: 1.500rem;
+    color: var(--darkgrey);
+    margin: 36px 0 0 142px;
+    display: inline-block;
+  }
+
+  .formStepInstrOne {
+    font-size: 2.250rem;
+    font-weight: 600;
+    color: #000000;
+    margin: 70px 0 40px 142px;
+  }
+
+  .formStepOne {
+    margin-left: 142px;
+    height: 368px;
+
+    .stepOneLabel {
+      display: block;
+      line-height: 2rem;
+      font-size: 1.500rem;
+      color: #000000;
+      margin: 0 0 49px 0;
+      position: relative;
+      cursor: pointer;
+
+      .stepOneInput {
+        margin-right: 70px;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+
+      .customInput {
+        margin-right: 30px;
+        border: 0.75px solid var(--darkgrey);
+        position: absolute;
+        top: -4px;
+        left: 0;
+        height: 40px;
+        width: 40px;
+      }
+
+      .stepOneInput:checked ~ .customInput {
+        background-color: var(--yellow);
+      }
+    }
+  }
+
+  .stepOneFwdBtn {
+    font-size: 1.500rem;
+    font-weight: 300;
+    line-height: 2rem;
+    padding: 23px 63px;
+    border: 0.75px solid var(--darkgrey);
+    margin: 158px 0 0 142px;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .formStepInstrTwo {
+    font-size: 2.250rem;
+    font-weight: 600;
+    color: #000000;
+    margin: 70px 0 49px 142px;
+  }
+
+  .formStepTwo {
+    margin-left: 142px;
+    display: flex;
+
+    .stepTwoLabel {
+      font-size: 1.5rem;
+      font-weight: 300;
+      line-height: 2rem;
+      display: block;
+      margin-right: 26px;
+      padding-top: 8px;
+    }
+
+    .stepTwoSelect {
+      width: 300px;
+      height: 49px;
+      font-size: 1.5rem;
+      font-weight: 300;
+      line-height: 2.063rem;
+      color: #000000;
+      cursor: pointer;
+      outline: none;
+      background-color: transparent;
+      border: 0.75px solid var(--darkgrey);
+    }
+
+    .selOption {
+      font-size: 1.5rem;
+      font-weight: 300;
+      line-height: 2.063rem;
+      background-color: transparent;
+    }
+
+  }
+
+  .stepTwoFwdBtn {
+    font-size: 1.500rem;
+    font-weight: 300;
+    line-height: 2rem;
+    padding: 23px 63px;
+    border: 0.75px solid var(--darkgrey);
+    margin: 468px 0 0 50px;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .stepTwoRevBtn {
+    font-size: 1.500rem;
+    font-weight: 300;
+    line-height: 2rem;
+    padding: 23px 52px;
+    border: 0.75px solid var(--darkgrey);
+    margin: 468px 0 0 142px;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .formStepInstrThree {
+    font-size: 2.250rem;
+    font-weight: 600;
+    color: #000000;
+    margin: 70px 0 20px 142px;
+  }
+
+  .formStepThree {
+    margin-left: 142px;
+
+    .stepThreeSelect {
+      width: 300px;
+      height: 49px;
+      font-size: 1.5rem;
+      font-weight: 300;
+      line-height: 2.063rem;
+      color: #000000;
+      cursor: pointer;
+      outline: none;
+      background-color: transparent;
+      border: 0.75px solid var(--darkgrey);
+      margin-bottom: 50px;
+    }
+
+    .helpGroups {
+
+      .helpGroupsHeader {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        font-weight: 600;
+        color: #000000;
+        margin-bottom: 20px;
+        display: block;
+      }
+
+      .helpGroupsLabel {
+
+        .helpGroupsInput {
+          margin-right: 70px;
+          opacity: 0;
+          position: absolute;
+          cursor: pointer;
+        }
+
+        .helpGroupsCheckmark {
+          display: inline-block;
+          line-height: 2rem;
+          font-size: 1.500rem;
+          color: #000000;
+          margin: 0 24px 24px 0;
+          padding: 11px 27px;
+          position: relative;
+          cursor: pointer;
+          border: 0.75px solid var(--darkgrey);
+        }
+
+        .helpGroupsInput:checked ~ .helpGroupsCheckmark {
+          background-color: var(--yellow);
+        }
+      }
+
+      .localizationSpecificLabel {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        font-weight: 600;
+        color: #000000;
+        display: block;
+        margin-top: 46px;
+
+        .localizationSpecific {
+          width: 570px;
+          height: 40px;
+          border: 0.75px solid var(--darkgrey);
+          display: block;
+          margin-top: 20px;
+          padding-left: 20px;
+          background-color: transparent;
+          font-size: 1.5rem;
+          color: var(--darkgrey);
+          outline: none;
+        }
+      }
+    }
+
+  }
+
+  .stepThreeFwdBtn {
+    font-size: 1.500rem;
+    font-weight: 300;
+    line-height: 2rem;
+    padding: 23px 63px;
+    border: 0.75px solid var(--darkgrey);
+    margin: 121px 0 0 50px;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .stepThreeRevBtn {
+    font-size: 1.500rem;
+    font-weight: 300;
+    line-height: 2rem;
+    padding: 23px 52px;
+    border: 0.75px solid var(--darkgrey);
+    margin: 121px 0 0 142px;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .formStepInstrFour {
+    font-size: 2.250rem;
+    font-weight: 600;
+    color: #000000;
+    margin: 70px 0 50px 142px;
+  }
+
+  .formStepFour {
+    margin-left: 142px;
+    display: flex;
+
+    .address_data_form {
+      width: 392px;
+      margin-right: 152px;
+
+      .addressDataHeader {
+        font-size: 1.5rem;
+        font-weight: 600;
+        display: block;
+        margin-bottom: 20px;
+      }
+
+      .addressLabel {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+
+
+        .addressLabelSpan {
+          font-size: 1.5rem;
+          line-height: 2rem;
+          font-weight: 300;
+        }
+
+        .addressInput {
+          font-size: 1.5rem;
+          width: 256px;
+          height: 40px;
+          background-color: transparent;
+          border: 0.75px solid var(--darkgrey);
+          color: var(--darkgrey);
+          font-family: var(--Font-base);
+          outline: 0;
+          font-weight: 300;
+
+        }
+      }
+
+    }
+
+    .time_data_form {
+      width: 392px;
+
+      .timeDataHeader {
+        font-size: 1.5rem;
+        font-weight: 600;
+        display: block;
+        margin-bottom: 20px;
+      }
+
+      .timeLabel {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+
+        .timeLabelSpan {
+          font-size: 1.5rem;
+          line-height: 2rem;
+          font-weight: 300;
+        }
+
+        .dataInput {
+          font-size: 1.5rem;
+          width: 256px;
+          height: 40px;
+          background-color: transparent;
+          border: 0.75px solid var(--darkgrey);
+          color: var(--darkgrey);
+          font-family: var(--Font-base);
+          outline: 0;
+          font-weight: 300;
+        }
+
+        .date {
+        }
+
+        .time {
+        }
+
+        .note {
+          width: 250px;
+          height: 120px;
+          resize: none;
+
+        }
+      }
+
+    }
+  }
+
+  .stepFourFwdBtn {
+    font-size: 1.500rem;
+    font-weight: 300;
+    line-height: 2rem;
+    padding: 23px 63px;
+    border: 0.75px solid var(--darkgrey);
+    margin: 205px 0 0 50px;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .stepFourRevBtn {
+    font-size: 1.500rem;
+    font-weight: 300;
+    line-height: 2rem;
+    padding: 23px 52px;
+    border: 0.75px solid var(--darkgrey);
+    margin: 205px 0 0 142px;
+    background-color: transparent;
+    cursor: pointer;
+  }
+}
+.formMainPartSum {
+  background-image: url("../assets/Background-Form.jpg");
+  height: 814px;
+
+  .summaryHeader {
+    display: inline-block;
+    font-size: 2.250rem;
+    font-weight: 600;
+    color: #000000;
+    margin: 70px 0 45px 142px;
+  }
+
+  .formSummary {
+
+    .youGiveContainer {
+      margin-left: 142px;
+
+      .youGiveHeader {
+        display: block;
+        font-size: 1.5rem;
+        color: #000000;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+
+      .youGiveCont {
+        font-size: 1.5rem;
+        color: #000000;
+        margin-bottom: 20px;
+      }
+      .youGiveCont::before {
+        content: "";
+        background-image: url("../assets/Icon-1.svg");
+        width: 50px;
+        height: 50px;
+      }
+
+      .youGivePlace {
+        font-size: 1.5rem;
+        color: #000000;
+        margin-bottom: 20px;
+      }
+    }
+
+    .data_time_summary {
+      display: flex;
+      margin-left: 142px;
+      margin-top: 58px;
+
+      .address_data_summary {
+        width: 392px;
+        margin-right: 160px;
+
+        .addressDataHeader {
+          font-size: 1.5rem;
+          font-weight: 600;
+          display: block;
+          margin-bottom: 20px;
+        }
+
+        .addressLabelSum {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 20px;
+
+
+          .addressLabelName {
+            font-size: 1.5rem;
+            line-height: 2rem;
+            font-weight: 300;
+          }
+
+          .addressSummaryInput {
+            font-size: 1.5rem;
+            line-height: 2rem;
+            width: 256px;
+            background-color: transparent;
+            color: var(--darkgrey);
+            font-weight: 300;
+
+          }
+        }
+
+      }
+
+      .time_data_summary {
+        width: 392px;
+
+        .timeDataHeader {
+          font-size: 1.5rem;
+          font-weight: 600;
+          display: block;
+          margin-bottom: 20px;
+        }
+
+        .timeLabelSum {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 20px;
+
+
+          .timeLabelName {
+            font-size: 1.5rem;
+            line-height: 2rem;
+            font-weight: 300;
+          }
+
+          .dataSummaryInput {
+            font-size: 1.5rem;
+            line-height: 2rem;
+            width: 256px;
+            background-color: transparent;
+            color: var(--darkgrey);
+            font-weight: 300;
+          }
+
+        }
+
+      }
+    }
+  }
+  .stepSumFwdBtn {
+    font-size: 1.500rem;
+    font-weight: 300;
+    line-height: 2rem;
+    padding: 23px 63px;
+    border: 0.75px solid var(--darkgrey);
+    margin: 59px 0 0 50px;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .stepSumRevBtn {
+    font-size: 1.500rem;
+    font-weight: 300;
+    line-height: 2rem;
+    padding: 23px 52px;
+    border: 0.75px solid var(--darkgrey);
+    margin: 59px 0 0 142px;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .thanks {
+    display: inline-block;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: -0.8px;
+    color: var(--darkgrey);
+    margin: 330px 0 0 294px;
+    line-height: 3.438rem;
+  }
+  .thanksDec{
+    background-image: url("../assets/Decoration.svg");
+    width: 253px;
+    height: 33px;
+    margin: 25px 0 0 482px;
+  }
+}
+
+
+
+
