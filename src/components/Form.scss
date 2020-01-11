@@ -155,6 +155,10 @@
       }
     }
   }
+  .stepOneAlert{
+    font-size: 1.5rem;
+    color: red;
+  }
 
   .stepOneFwdBtn {
     font-size: 1.500rem;
@@ -175,38 +179,82 @@
   }
 
   .formStepTwo {
+    width: 528px;
+    height: 249px;
     margin-left: 142px;
     display: flex;
+    position: relative;
 
     .stepTwoLabel {
       font-size: 1.5rem;
       font-weight: 300;
       line-height: 2rem;
       display: block;
-      margin-right: 26px;
+      margin-right: 24px;
       padding-top: 8px;
     }
 
     .stepTwoSelect {
       width: 300px;
       height: 49px;
-      font-size: 1.5rem;
-      font-weight: 300;
-      line-height: 2.063rem;
-      color: #000000;
       cursor: pointer;
-      outline: none;
-      background-color: transparent;
       border: 0.75px solid var(--darkgrey);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .stepTwoSelectChoose {
+        font-size: 1.5rem;
+        font-weight: 300;
+        line-height: 2.063rem;
+        color: #000000;
+        padding-left: 18px;
+      }
+
+      .arrowClosed {
+        background-image: url("../assets/Icon-Arrow-Down.svg");
+        width: 57px;
+        height: 26px;
+      }
+      .arrowClosed.open {
+        background-image: url("../assets/Icon-Arrow-Up.svg");
+        width: 57px;
+        height: 26px;
+      }
+    }
+    .stepTwoOptions {
+      position: absolute;
+      border: 0.75px solid var(--darkgrey);
+      right: 0;
+      top: 64px;
+      visibility: hidden;
     }
 
-    .selOption {
-      font-size: 1.5rem;
-      font-weight: 300;
-      line-height: 2.063rem;
-      background-color: transparent;
-    }
+    .stepTwoOptions.open {
+      position: absolute;
+      border: 0.75px solid var(--darkgrey);
+      right: 0;
+      top: 64px;
+      visibility: visible;
 
+      .stepTwoSelOpt{
+        font-size: 1.5rem;
+        font-weight: 300;
+        line-height: 2.063rem;
+        display: block;
+        padding: 1px 36px;
+        cursor: pointer;
+      }
+      .stepTwoSelOpt:hover{
+        background-color: var(--yellow);
+      }
+    }
+  }
+  .stepTwoAlert{
+    font-size: 1.5rem;
+    color: red;
+    position: absolute;
+    bottom:0;
   }
 
   .stepTwoFwdBtn {
@@ -215,7 +263,7 @@
     line-height: 2rem;
     padding: 23px 63px;
     border: 0.75px solid var(--darkgrey);
-    margin: 468px 0 0 50px;
+    margin: 268px 0 0 50px;
     background-color: transparent;
     cursor: pointer;
   }
@@ -226,7 +274,7 @@
     line-height: 2rem;
     padding: 23px 52px;
     border: 0.75px solid var(--darkgrey);
-    margin: 468px 0 0 142px;
+    margin: 268px 0 0 142px;
     background-color: transparent;
     cursor: pointer;
   }
@@ -298,7 +346,7 @@
         font-weight: 600;
         color: #000000;
         display: block;
-        margin-top: 46px;
+        margin-top: 22px;
 
         .localizationSpecific {
           width: 570px;
@@ -370,13 +418,13 @@
 
         .addressLabelSpan {
           font-size: 1.5rem;
-          line-height: 2rem;
+          line-height: 1.625rem;
           font-weight: 300;
         }
 
         .addressInput {
           font-size: 1.5rem;
-          width: 256px;
+          width: 236px;
           height: 40px;
           background-color: transparent;
           border: 0.75px solid var(--darkgrey);
@@ -384,6 +432,7 @@
           font-family: var(--Font-base);
           outline: 0;
           font-weight: 300;
+          padding-left: 20px;
 
         }
       }
@@ -403,6 +452,7 @@
       .timeLabel {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         margin-bottom: 20px;
 
 
@@ -414,7 +464,7 @@
 
         .dataInput {
           font-size: 1.5rem;
-          width: 256px;
+          width: 236px;
           height: 40px;
           background-color: transparent;
           border: 0.75px solid var(--darkgrey);
@@ -422,20 +472,18 @@
           font-family: var(--Font-base);
           outline: 0;
           font-weight: 300;
-        }
-
-        .date {
-        }
-
-        .time {
+          padding-left: 20px;
         }
 
         .note {
-          width: 250px;
+          width: 232px;
           height: 120px;
           resize: none;
 
         }
+      }
+      .timeLabel.note{
+        align-items: flex-start;
       }
 
     }
@@ -447,7 +495,7 @@
     line-height: 2rem;
     padding: 23px 63px;
     border: 0.75px solid var(--darkgrey);
-    margin: 205px 0 0 50px;
+    margin: 200px 0 0 50px;
     background-color: transparent;
     cursor: pointer;
   }
@@ -458,18 +506,20 @@
     line-height: 2rem;
     padding: 23px 52px;
     border: 0.75px solid var(--darkgrey);
-    margin: 205px 0 0 142px;
+    margin: 200px 0 0 142px;
     background-color: transparent;
     cursor: pointer;
   }
 }
+
 .formMainPartSum {
   background-image: url("../assets/Background-Form.jpg");
-  height: 814px;
+  height: 883px;
 
   .summaryHeader {
     display: inline-block;
     font-size: 2.250rem;
+    line-height: 2.813rem;
     font-weight: 600;
     color: #000000;
     margin: 70px 0 45px 142px;
@@ -479,6 +529,7 @@
 
     .youGiveContainer {
       margin-left: 142px;
+      height: 173px;
 
       .youGiveHeader {
         display: block;
@@ -490,27 +541,46 @@
 
       .youGiveCont {
         font-size: 1.5rem;
+        vertical-align: middle;
         color: #000000;
         margin-bottom: 20px;
+        display: flex;
+        align-items: center;
       }
+
       .youGiveCont::before {
         content: "";
-        background-image: url("../assets/Icon-1.svg");
         width: 50px;
         height: 50px;
+        background-image: url("../assets/Icon-1.svg");
+        background-size: 50px 50px;
+        display: inline-block;
+        margin-right: 19px;
       }
 
       .youGivePlace {
         font-size: 1.5rem;
         color: #000000;
         margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+      }
+
+      .youGivePlace::before {
+        content: "";
+        width: 50px;
+        height: 50px;
+        background-image: url("../assets/Icon-4.svg");
+        background-size: 50px 50px;
+        display: inline-block;
+        margin-right: 19px;
       }
     }
 
     .data_time_summary {
       display: flex;
       margin-left: 142px;
-      margin-top: 58px;
+      margin-top: 50px;
 
       .address_data_summary {
         width: 392px;
@@ -532,7 +602,7 @@
 
           .addressLabelName {
             font-size: 1.5rem;
-            line-height: 2rem;
+            line-height: 1.625rem;
             font-weight: 300;
           }
 
@@ -585,6 +655,7 @@
       }
     }
   }
+
   .stepSumFwdBtn {
     font-size: 1.500rem;
     font-weight: 300;
@@ -617,7 +688,8 @@
     margin: 330px 0 0 294px;
     line-height: 3.438rem;
   }
-  .thanksDec{
+
+  .thanksDec {
     background-image: url("../assets/Decoration.svg");
     width: 253px;
     height: 33px;
