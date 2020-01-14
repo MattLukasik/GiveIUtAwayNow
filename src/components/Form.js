@@ -120,36 +120,43 @@ class Form extends Component {
         })
     };
 
-    handleStepThreeChildrenChange = () => {
+    handleStepThreeChildrenChange = (e) => {
         this.setState({
+            // childrenValue: e.target.name,
+            // [e.target.name]: e.target.value,
             children: !this.state.children,
             stepThreeCheckFormAlert: ""
         });
     };
-    handleStepThreeMothersChange = () => {
+    handleStepThreeMothersChange = (e) => {
         this.setState({
+            mothersValue: e.target.name,
             mothers: !this.state.mothers,
             stepThreeCheckFormAlert: ""
         });
     };
-    handleStepThreeHomelessChange = () => {
+    handleStepThreeHomelessChange = (e) => {
         this.setState({
+            homelessValue: e.target.name,
             homeless: !this.state.homeless,
             stepThreeCheckFormAlert: ""
         });
     };
-    handleStepThreeDisabledChange = () => {
+    handleStepThreeDisabledChange = (e) => {
         this.setState({
+            disabledValue: e.target.name,
             disabled: !this.state.disabled,
             stepThreeCheckFormAlert: ""
         });
     };
-    handleStepThreeOlderChange = () => {
+    handleStepThreeOlderChange = (e) => {
         this.setState({
+            olderValue: e.target.name,
             older: !this.state.older,
             stepThreeCheckFormAlert: ""
         });
     };
+
     handleOrgNameChange = (e) => {
         this.setState({
             orgName: e.target.value,
@@ -284,6 +291,42 @@ class Form extends Component {
 
 
     render() {
+        let msgChild;
+        if (this.state.children) {
+            msgChild = "dzieciom, "
+        } else {
+            msgChild = ""
+        }
+
+        let msgMother;
+        if (this.state.mothers) {
+            msgMother = "samotnym matkom, "
+        } else {
+            msgMother = ""
+        }
+
+        let msgHomeless;
+        if (this.state.homeless) {
+            msgHomeless = "bezdomnym, "
+        } else {
+            msgHomeless = ""
+        }
+
+        let msgDisable;
+        if (this.state.disabled) {
+            msgDisable = "niepełnosprawnym, "
+        } else {
+            msgDisable = ""
+        }
+
+        let msgOlder;
+        if (this.state.older) {
+            msgOlder = "osobom starszym, "
+        } else {
+            msgOlder = ""
+        }
+
+
         return (
             <>
                 <HomeHeader/>
@@ -331,40 +374,40 @@ class Form extends Component {
                             <form action="" className="formStepOne">
                                 <label className="stepOneLabel">
                                     <input type="radio" name="goods"
-                                           value="goodClothes"
-                                           checked={this.state.stepOneCheckedOption === "goodClothes"}
+                                           value="ubrania w dobrym stanie"
+                                           checked={this.state.stepOneCheckedOption === "ubrania w dobrym stanie"}
                                            onChange={this.handleStepOneOptionChange}
                                            className="stepOneInput"/>
                                     <span className="customInput"></span>
                                     ubrania, które nadają się do ponownego użycia
                                 </label>
                                 <label className="stepOneLabel">
-                                    <input type="radio" name="goods" value="badClothes"
-                                           checked={this.state.stepOneCheckedOption === "badClothes"}
+                                    <input type="radio" name="goods" value="ubrania do wyrzucenia"
+                                           checked={this.state.stepOneCheckedOption === "ubrania do wyrzucenia"}
                                            onChange={this.handleStepOneOptionChange}
                                            className="stepOneInput"/>
                                     <span className="customInput"></span>
                                     ubrania, do wyrzucenia
                                 </label>
                                 <label className="stepOneLabel">
-                                    <input type="radio" name="goods" value="toys"
-                                           checked={this.state.stepOneCheckedOption === "toys"}
+                                    <input type="radio" name="goods" value="zabawki"
+                                           checked={this.state.stepOneCheckedOption === "zabawki"}
                                            onChange={this.handleStepOneOptionChange}
                                            className="stepOneInput"/>
                                     <span className="customInput"></span>
                                     zabawki
                                 </label>
                                 <label className="stepOneLabel">
-                                    <input type="radio" name="goods" value="books"
-                                           checked={this.state.stepOneCheckedOption === "books"}
+                                    <input type="radio" name="goods" value="książki"
+                                           checked={this.state.stepOneCheckedOption === "książki"}
                                            onChange={this.handleStepOneOptionChange}
                                            className="stepOneInput"/>
                                     <span className="customInput"></span>
                                     książki
                                 </label>
                                 <label className="stepOneLabel">
-                                    <input type="radio" name="goods" value="other"
-                                           checked={this.state.stepOneCheckedOption === "other"}
+                                    <input type="radio" name="goods" value="inne"
+                                           checked={this.state.stepOneCheckedOption === "inne"}
                                            onChange={this.handleStepOneOptionChange}
                                            className="stepOneInput"/>
                                     <span className="customInput"></span>
@@ -396,15 +439,15 @@ class Form extends Component {
                                     <div className={`arrowClosed ${this.state.stepTwoDropdownOpen ? "open" : ""}`}></div>
                                 </div>
                                 <div className={`stepTwoOptions ${this.state.stepTwoDropdownOpen ? "open" : ""}`}>
-                                    <option value="1" className="stepTwoSelOpt"
+                                    <option value="1 worek" className="stepTwoSelOpt"
                                             onClick={this.handleStepTwoOptionChange}>1</option>
-                                    <option value="2" className="stepTwoSelOpt"
+                                    <option value="2 worki" className="stepTwoSelOpt"
                                             onClick={this.handleStepTwoOptionChange}>2</option>
-                                    <option value="3" className="stepTwoSelOpt"
+                                    <option value="3 worki" className="stepTwoSelOpt"
                                              onClick={this.handleStepTwoOptionChange}>3</option>
-                                    <option value="4" className="stepTwoSelOpt"
+                                    <option value="4 worki" className="stepTwoSelOpt"
                                             onClick={this.handleStepTwoOptionChange}>4</option>
-                                    <option value="5" className="stepTwoSelOpt"
+                                    <option value="5 worków" className="stepTwoSelOpt"
                                             onClick={this.handleStepTwoOptionChange}>5</option>
                                 </div>
                             </form>
@@ -583,42 +626,42 @@ class Form extends Component {
                             <div className="formSummary">
                                 <div className="youGiveContainer">
                                     <p className="youGiveHeader">Oddajesz</p>
-                                    <p className="youGiveCont">4 worki, ubrania w dobrym stanie, dzieciom</p>
-                                    <p className="youGivePlace">dla lokalizacji: Warszawa</p>
+                                    <p className="youGiveCont">{this.state.stepTwoValue}, {this.state.stepOneCheckedOption}, {msgChild}{msgMother}{msgHomeless}{msgDisable}{msgOlder}</p>
+                                    <p className="youGivePlace">dla lokalizacji: {this.state.stepThreeDropValue}</p>
                                 </div>
                                 <div className="data_time_summary">
                                     <div className="address_data_summary">
                                         <span className="addressDataHeader">Adres odbioru:</span>
                                         <div className="addressLabelSum">
                                             <span className="addressLabelName">Ulica</span>
-                                            <span className="addressSummaryInput">Prosta 52</span>
+                                            <span className="addressSummaryInput">{this.state.street}</span>
                                         </div>
                                         <div className="addressLabelSum">
                                             <span className="addressLabelName">Miasto</span>
-                                            <span className="addressSummaryInput">Poznań</span>
+                                            <span className="addressSummaryInput">{this.state.city}</span>
                                         </div>
                                         <div className="addressLabelSum">
                                             <span className="addressLabelName">Kod<br/>pocztowy</span>
-                                            <span className="addressSummaryInput">60-179</span>
+                                            <span className="addressSummaryInput">{this.state.zipCode}</span>
                                         </div>
                                         <div className="addressLabelSum">
                                             <span className="addressLabelName">Numer<br/>telefonu</span>
-                                            <span className="addressSummaryInput">123-456-789</span>
+                                            <span className="addressSummaryInput">{this.state.phone}</span>
                                         </div>
                                     </div>
                                     <div className="time_data_summary">
                                         <span className="timeDataHeader">Termin odbioru</span>
                                         <div className="timeLabelSum">
                                             <span className="timeLabelName">Data</span>
-                                            <span className="dataSummaryInput">12.18.1979</span>
+                                            <span className="dataSummaryInput">{this.state.date}</span>
                                         </div>
                                         <div className="timeLabelSum">
                                             <span className="timeLabelName">Godzina</span>
-                                            <span className="dataSummaryInput">16:00</span>
+                                            <span className="dataSummaryInput">{this.state.hour}</span>
                                         </div>
                                         <div className="timeLabelSum">
                                             <span className="timeLabelName">Uwagi<br/>dla kuriera</span>
-                                            <span className="dataSummaryInput">Wjazd na osiedle pierwszą bramą. Kod do domofonu to 1234</span>
+                                            <span className="dataSummaryInput">{this.state.info}</span>
                                         </div>
                                     </div>
                                 </div>
