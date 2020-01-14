@@ -4,6 +4,9 @@ import HomeMain from "./HomeMain";
 import HomeContact from "./HomeContact";
 import HomeFooter from "./HomeFooter";
 import HomeHeader from "./HomeHeader";
+import DatePicker from "react-datepicker";
+import Moment from 'react-moment';
+import "react-datepicker/dist/react-datepicker.css";
 
 class Form extends Component {
     constructor(props) {
@@ -26,11 +29,12 @@ class Form extends Component {
             zipCode: "",
             phone: "",
             date: "",
+            startDate: new Date(),
             hour: "",
+            startHour: new Date(),
             info: ""
         };
     }
-
     handleShowStep1 = () => {
         this.setState({
             showStep1: true,
@@ -122,36 +126,30 @@ class Form extends Component {
 
     handleStepThreeChildrenChange = (e) => {
         this.setState({
-            // childrenValue: e.target.name,
-            // [e.target.name]: e.target.value,
             children: !this.state.children,
             stepThreeCheckFormAlert: ""
         });
     };
     handleStepThreeMothersChange = (e) => {
         this.setState({
-            mothersValue: e.target.name,
             mothers: !this.state.mothers,
             stepThreeCheckFormAlert: ""
         });
     };
     handleStepThreeHomelessChange = (e) => {
         this.setState({
-            homelessValue: e.target.name,
             homeless: !this.state.homeless,
             stepThreeCheckFormAlert: ""
         });
     };
     handleStepThreeDisabledChange = (e) => {
         this.setState({
-            disabledValue: e.target.name,
             disabled: !this.state.disabled,
             stepThreeCheckFormAlert: ""
         });
     };
     handleStepThreeOlderChange = (e) => {
         this.setState({
-            olderValue: e.target.name,
             older: !this.state.older,
             stepThreeCheckFormAlert: ""
         });
@@ -160,15 +158,16 @@ class Form extends Component {
     handleOrgNameChange = (e) => {
         this.setState({
             orgName: e.target.value,
-        })
+            stepThreeDropdownAlert: ""
+        });
     };
 
     handleShowStep4 = (eventStepThreeSubmit) => {
         eventStepThreeSubmit.preventDefault();
         let stepThreeDropdownAlert;
         let stepThreeCheckFormAlert;
-        if (!this.state.stepThreeDropValue) {
-            stepThreeDropdownAlert = <span className="stepThreeDropdownAlert">Wybierz lokalizację!</span>;
+        if (!this.state.stepThreeDropValue && !this.state.orgName) {
+            stepThreeDropdownAlert = <span className="stepThreeDropdownAlert">Wybierz lokalizację lub podaj nazwę konkretnej organizacji w polu poniżej!</span>;
             this.setState({
                 stepThreeDropdownAlert: stepThreeDropdownAlert
             });
@@ -215,15 +214,15 @@ class Form extends Component {
             stepFourAlert: ""
         })
     };
-    handleDateChange = (e) => {
+    handleDate = (date) => {
         this.setState({
-            date: e.target.value,
+            startDate: date,
             stepFourAlert: ""
-        })
+        });
     };
-    handleHourChange = (e) => {
+    handleHour = (date) => {
         this.setState({
-            hour: e.target.value,
+            startHour: date,
             stepFourAlert: ""
         })
     };
@@ -237,32 +236,32 @@ class Form extends Component {
         eventStepFourSubmit.preventDefault();
         let stepFourLeftAlert;
         let stepFourRightAlert;
-        if (!this.state.street) {
+        if (!this.state.street || !/[0-9a-zA-Z]{5,}/.test(this.state.street)) {
             stepFourLeftAlert = <span className="stepFourLeftAlert">Wpisz ulicę i numer domu!</span>;
             this.setState({
                 stepFourAlert: stepFourLeftAlert
             });
-        } else if (!this.state.city) {
+        } else if (!this.state.city || !/[0-9a-zA-Z]{2,}/.test(this.state.city)) {
             stepFourLeftAlert = <span className="stepFourLeftAlert">Podaj miasto!</span>;
             this.setState({
                 stepFourAlert: stepFourLeftAlert
             });
-        } else if (!this.state.zipCode) {
+        } else if (!this.state.zipCode || !/[0-9]{2}(-[0-9]{3})/.test(this.state.zipCode)) {
             stepFourLeftAlert = <span className="stepFourLeftAlert">Podaj kod pocztowy!</span>;
             this.setState({
                 stepFourAlert: stepFourLeftAlert
             });
-        } else if (!this.state.phone) {
+        } else if (!this.state.phone || !/[0-9]{9}/.test(this.state.phone)) {
             stepFourLeftAlert = <span className="stepFourLeftAlert">Podaj numer kontaktowy!</span>;
             this.setState({
                 stepFourAlert: stepFourLeftAlert
             });
-        } else if (!this.state.date) {
+        } else if (!this.state.startDate) {
             stepFourRightAlert = <span className="stepFourRightAlert">Podaj datę odbioru przesyłki!</span>;
             this.setState({
                 stepFourAlert: stepFourRightAlert
             });
-        } else if (!this.state.hour) {
+        } else if (!this.state.startHour) {
             stepFourRightAlert = <span className="stepFourRightAlert">Podaj orientacyjną godzinę odbioru!</span>;
             this.setState({
                 stepFourAlert: stepFourRightAlert
@@ -591,17 +590,25 @@ class Form extends Component {
                                     <span className="timeDataHeader">Termin odbioru</span>
                                     <label className="timeLabel">
                                         <span className="timeLabelSpan">Data</span>
-                                        <input type="text" className="dataInput date"
-                                               value={this.state.date}
-                                               name="date"
-                                               onChange={this.handleDateChange}/>
+                                        <DatePicker type="text" className="dataInput date"
+                                                value={this.state.startDate}
+                                                name="date"
+                                                selected={this.state.startDate}
+                                                dateFormat="dd.MM.yyyy"
+                                                onChange={this.handleDate}/>
                                     </label>
                                     <label className="timeLabel">
                                         <span className="timeLabelSpan">Godzina</span>
-                                        <input type="text" className="dataInput time"
-                                               value={this.state.hour}
+                                        <DatePicker type="text" className="dataInput time"
+                                               value={this.state.startHour}
                                                name="hour"
-                                               onChange={this.handleHourChange}/>
+                                               showTimeSelect
+                                               showTimeSelectOnly
+                                               timeIntervals={30}
+                                               timeCaption="Time"
+                                               dateFormat="h:mm aa"
+                                               selected={this.state.startHour}
+                                               onChange={this.handleHour}/>
                                     </label>
                                     <label className="timeLabel note">
                                         <span className="timeLabelSpan">Uwagi<br/>dla kuriera</span>
@@ -653,11 +660,11 @@ class Form extends Component {
                                         <span className="timeDataHeader">Termin odbioru</span>
                                         <div className="timeLabelSum">
                                             <span className="timeLabelName">Data</span>
-                                            <span className="dataSummaryInput">{this.state.date}</span>
+                                            <Moment className="dataSummaryInput" format="DD.MM.YYYY">{this.state.startDate}</Moment>
                                         </div>
                                         <div className="timeLabelSum">
                                             <span className="timeLabelName">Godzina</span>
-                                            <span className="dataSummaryInput">{this.state.hour}</span>
+                                            <Moment className="dataSummaryInput" format="hh:mm a">{this.state.startHour}</Moment>
                                         </div>
                                         <div className="timeLabelSum">
                                             <span className="timeLabelName">Uwagi<br/>dla kuriera</span>
