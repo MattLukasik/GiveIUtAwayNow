@@ -224,9 +224,6 @@
     }
     .stepTwoOptions {
       position: absolute;
-      border: 0.75px solid var(--darkgrey);
-      right: 0;
-      top: 64px;
       visibility: hidden;
     }
 
@@ -288,19 +285,71 @@
 
   .formStepThree {
     margin-left: 142px;
+    position: relative;
 
     .stepThreeSelect {
       width: 300px;
       height: 49px;
-      font-size: 1.5rem;
-      font-weight: 300;
-      line-height: 2.063rem;
-      color: #000000;
       cursor: pointer;
       outline: none;
       background-color: transparent;
       border: 0.75px solid var(--darkgrey);
       margin-bottom: 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .stepThreeSelectChoose {
+            font-size: 1.5rem;
+            font-weight: 300;
+            line-height: 2.063rem;
+            color: #000000;
+            padding-left: 18px;
+      }
+      .arrowClosed {
+        background-image: url("../assets/Icon-Arrow-Down.svg");
+        width: 57px;
+        height: 26px;
+      }
+      .arrowClosed.open {
+        background-image: url("../assets/Icon-Arrow-Up.svg");
+        width: 57px;
+        height: 26px;
+      }
+    }
+    .stepThreeOptions {
+      position: absolute;
+      visibility: hidden;
+    }
+
+    .stepThreeOptions.open {
+      position: absolute;
+      width: 300px;
+      height: 185px;
+      border: 0.75px solid var(--darkgrey);
+      left: 0;
+      top: 64px;
+      visibility: visible;
+      background-color: #E8E9E4;
+      z-index: 1;
+
+      .stepThreeSelOpt{
+        font-size: 1.5rem;
+        font-weight: 300;
+        line-height: 2.063rem;
+        display: block;
+        padding: 1px 36px;
+        cursor: pointer;
+      }
+      .stepThreeSelOpt:hover{
+        background-color: var(--yellow);
+      }
+    }
+    .stepThreeDropdownAlert{
+      font-size: 1.5rem;
+      color: red;
+      position: absolute;
+      top: 64px;
     }
 
     .helpGroups {
@@ -315,6 +364,7 @@
       }
 
       .helpGroupsLabel {
+        position: relative;
 
         .helpGroupsInput {
           margin-right: 70px;
@@ -339,8 +389,14 @@
           background-color: var(--yellow);
         }
       }
+      .stepThreeCheckFormAlert{
+        font-size: 1.5rem;
+        color: red;
+        position: absolute;
+        bottom: 100px;
+      }
 
-      .localizationSpecificLabel {
+      .organizationSpecificLabel {
         font-size: 1.5rem;
         line-height: 2rem;
         font-weight: 600;
@@ -348,7 +404,7 @@
         display: block;
         margin-top: 22px;
 
-        .localizationSpecific {
+        .organizationSpecific {
           width: 570px;
           height: 40px;
           border: 0.75px solid var(--darkgrey);
@@ -371,7 +427,7 @@
     line-height: 2rem;
     padding: 23px 63px;
     border: 0.75px solid var(--darkgrey);
-    margin: 121px 0 0 50px;
+    margin: 120px 0 0 50px;
     background-color: transparent;
     cursor: pointer;
   }
@@ -382,7 +438,7 @@
     line-height: 2rem;
     padding: 23px 52px;
     border: 0.75px solid var(--darkgrey);
-    margin: 121px 0 0 142px;
+    margin: 120px 0 0 142px;
     background-color: transparent;
     cursor: pointer;
   }
@@ -397,6 +453,22 @@
   .formStepFour {
     margin-left: 142px;
     display: flex;
+    position: relative;
+
+
+    .stepFourLeftAlert {
+      font-size: 1.5rem;
+      color: red;
+      position: absolute;
+      bottom: -50px;
+    }
+    .stepFourRightAlert {
+      font-size: 1.5rem;
+      color: red;
+      position: absolute;
+      bottom: -50px;
+      left: 600px;
+    }
 
     .address_data_form {
       width: 392px;

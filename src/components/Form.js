@@ -15,7 +15,20 @@ class Form extends Component {
             showStep4: false,
             showSummary: false,
             showThanks: false,
-        }
+            children: false,
+            mothers:false,
+            homeless: false,
+            disabled: false,
+            older: false,
+            orgName:"",
+            street:"",
+            city:"",
+            zipCode: "",
+            phone: "",
+            date: "",
+            hour: "",
+            info: ""
+        };
     }
 
     handleShowStep1 = () => {
@@ -91,25 +104,172 @@ class Form extends Component {
             })
         }
     };
-    handleShowStep4 = () => {
+
+    //formularz - krok trzeci //
+
+    handleStepThreeDropdown = () => {
         this.setState({
-            showStep1: false,
-            showStep2: false,
-            showStep3: false,
-            showStep4: true,
-            showSummary: false,
-            showThanks: false
+            stepThreeDropdownOpen: !this.state.stepThreeDropdownOpen
         })
     };
-    handleShowSummary = () => {
+    handleStepThreeDropDownChange = (eventStepThreeDropChange) => {
         this.setState({
-            showStep1: false,
-            showStep2: false,
-            showStep3: false,
-            showStep4: false,
-            showSummary: true,
-            showThanks: false
+            stepThreeDropValue: eventStepThreeDropChange.target.value,
+            stepThreeDropdownOpen: !this.state.stepThreeDropdownOpen,
+            stepThreeDropdownAlert: ""
         })
+    };
+
+    handleStepThreeChildrenChange = () => {
+        this.setState({
+            children: !this.state.children,
+            stepThreeCheckFormAlert: ""
+        });
+    };
+    handleStepThreeMothersChange = () => {
+        this.setState({
+            mothers: !this.state.mothers,
+            stepThreeCheckFormAlert: ""
+        });
+    };
+    handleStepThreeHomelessChange = () => {
+        this.setState({
+            homeless: !this.state.homeless,
+            stepThreeCheckFormAlert: ""
+        });
+    };
+    handleStepThreeDisabledChange = () => {
+        this.setState({
+            disabled: !this.state.disabled,
+            stepThreeCheckFormAlert: ""
+        });
+    };
+    handleStepThreeOlderChange = () => {
+        this.setState({
+            older: !this.state.older,
+            stepThreeCheckFormAlert: ""
+        });
+    };
+    handleOrgNameChange = (e) => {
+        this.setState({
+            orgName: e.target.value,
+        })
+    };
+
+    handleShowStep4 = (eventStepThreeSubmit) => {
+        eventStepThreeSubmit.preventDefault();
+        let stepThreeDropdownAlert;
+        let stepThreeCheckFormAlert;
+        if (!this.state.stepThreeDropValue) {
+            stepThreeDropdownAlert = <span className="stepThreeDropdownAlert">Wybierz lokalizację!</span>;
+            this.setState({
+                stepThreeDropdownAlert: stepThreeDropdownAlert
+            });
+        } else if (!this.state.children && !this.state.mothers && !this.state.homeless && !this.state.disabled && !this.state.older){
+            stepThreeCheckFormAlert = <span className="stepThreeCheckFormAlert">Wybierz komu chcesz pomóc!</span>;
+            this.setState({
+                stepThreeCheckFormAlert: stepThreeCheckFormAlert
+            });
+        } else {
+            this.setState({
+                showStep1: false,
+                showStep2: false,
+                showStep3: false,
+                showStep4: true,
+                showSummary: false,
+                showThanks: false
+            })
+        }
+    };
+
+    //formularz - krok czwarty //
+
+    handleStreetChange = (e) => {
+        this.setState({
+            street: e.target.value,
+            stepFourAlert: ""
+        })
+    };
+    handleCityChange = (e) => {
+        this.setState({
+            city: e.target.value,
+            stepFourAlert: ""
+        })
+    };
+    handleZipCodeChange = (e) => {
+        this.setState({
+            zipCode: e.target.value,
+            stepFourAlert: ""
+        })
+    };
+    handlePhoneChange = (e) => {
+        this.setState({
+            phone: e.target.value,
+            stepFourAlert: ""
+        })
+    };
+    handleDateChange = (e) => {
+        this.setState({
+            date: e.target.value,
+            stepFourAlert: ""
+        })
+    };
+    handleHourChange = (e) => {
+        this.setState({
+            hour: e.target.value,
+            stepFourAlert: ""
+        })
+    };
+    handleInfoChange = (e) => {
+        this.setState({
+            info: e.target.value,
+        })
+    };
+
+    handleShowSummary = (eventStepFourSubmit) => {
+        eventStepFourSubmit.preventDefault();
+        let stepFourLeftAlert;
+        let stepFourRightAlert;
+        if (!this.state.street) {
+            stepFourLeftAlert = <span className="stepFourLeftAlert">Wpisz ulicę i numer domu!</span>;
+            this.setState({
+                stepFourAlert: stepFourLeftAlert
+            });
+        } else if (!this.state.city) {
+            stepFourLeftAlert = <span className="stepFourLeftAlert">Podaj miasto!</span>;
+            this.setState({
+                stepFourAlert: stepFourLeftAlert
+            });
+        } else if (!this.state.zipCode) {
+            stepFourLeftAlert = <span className="stepFourLeftAlert">Podaj kod pocztowy!</span>;
+            this.setState({
+                stepFourAlert: stepFourLeftAlert
+            });
+        } else if (!this.state.phone) {
+            stepFourLeftAlert = <span className="stepFourLeftAlert">Podaj numer kontaktowy!</span>;
+            this.setState({
+                stepFourAlert: stepFourLeftAlert
+            });
+        } else if (!this.state.date) {
+            stepFourRightAlert = <span className="stepFourRightAlert">Podaj datę odbioru przesyłki!</span>;
+            this.setState({
+                stepFourAlert: stepFourRightAlert
+            });
+        } else if (!this.state.hour) {
+            stepFourRightAlert = <span className="stepFourRightAlert">Podaj orientacyjną godzinę odbioru!</span>;
+            this.setState({
+                stepFourAlert: stepFourRightAlert
+            });
+        } else {
+            this.setState({
+                showStep1: false,
+                showStep2: false,
+                showStep3: false,
+                showStep4: false,
+                showSummary: true,
+                showThanks: false
+            })
+        }
     };
     handleShowThanks = () => {
         this.setState({
@@ -233,20 +393,19 @@ class Form extends Component {
                                 {this.state.stepTwoAlert}
                                 <div className="stepTwoSelect" onClick={this.handleStepTwoDropdown}>
                                     <span className="stepTwoSelectChoose">{`${this.state.stepTwoValue ? this.state.stepTwoValue : "-wybierz-"}`}</span>
-                                    <div
-                                        className={`arrowClosed ${this.state.stepTwoDropdownOpen ? "open" : ""}`}></div>
+                                    <div className={`arrowClosed ${this.state.stepTwoDropdownOpen ? "open" : ""}`}></div>
                                 </div>
                                 <div className={`stepTwoOptions ${this.state.stepTwoDropdownOpen ? "open" : ""}`}>
                                     <option value="1" className="stepTwoSelOpt"
-                                          onClick={this.handleStepTwoOptionChange}>1</option>
+                                            onClick={this.handleStepTwoOptionChange}>1</option>
                                     <option value="2" className="stepTwoSelOpt"
-                                          onClick={this.handleStepTwoOptionChange}>2</option>
+                                            onClick={this.handleStepTwoOptionChange}>2</option>
                                     <option value="3" className="stepTwoSelOpt"
-                                          onClick={this.handleStepTwoOptionChange}>3</option>
+                                             onClick={this.handleStepTwoOptionChange}>3</option>
                                     <option value="4" className="stepTwoSelOpt"
-                                          onClick={this.handleStepTwoOptionChange}>4</option>
+                                            onClick={this.handleStepTwoOptionChange}>4</option>
                                     <option value="5" className="stepTwoSelOpt"
-                                          onClick={this.handleStepTwoOptionChange}>5</option>
+                                            onClick={this.handleStepTwoOptionChange}>5</option>
                                 </div>
                             </form>
                             <button className="stepTwoRevBtn" onClick={this.handleShowStep1}>Wstecz</button>
@@ -268,39 +427,74 @@ class Form extends Component {
                             <p className="formStep">Krok 3/4</p>
                             <h2 className="formStepInstrThree">Lokalizacja:</h2>
                             <form action="" className="formStepThree">
-                                <select className="stepThreeSelect">
-                                    <option value="0" className="selOption">-wybierz-</option>
-                                    <option value="1" className="selOption">Poznań</option>
-                                    <option value="2" className="selOption">Warszawa</option>
-                                    <option value="3" className="selOption">Kraków</option>
-                                    <option value="4" className="selOption">Wrocław</option>
-                                    <option value="5" className="selOption">Katowice</option>
-                                </select>
+                                <div className="stepThreeSelect" onClick={this.handleStepThreeDropdown}>
+                                    <span className="stepThreeSelectChoose">{`${this.state.stepThreeDropValue ? this.state.stepThreeDropValue : "-wybierz-"}`}</span>
+                                    <div className={`arrowClosed ${this.state.stepThreeDropdownOpen ? "open" : ""}`}></div>
+                                </div>
+                                {this.state.stepThreeDropdownAlert}
+                                <div className={`stepThreeOptions ${this.state.stepThreeDropdownOpen ? "open" : ""}`}>
+                                    <option value="Poznań" className="stepThreeSelOpt"
+                                            onClick={this.handleStepThreeDropDownChange}>Poznań</option>
+                                    <option value="Warszawa" className="stepThreeSelOpt"
+                                            onClick={this.handleStepThreeDropDownChange}>Warszawa</option>
+                                    <option value="Kraków" className="stepThreeSelOpt"
+                                            onClick={this.handleStepThreeDropDownChange}>Kraków</option>
+                                    <option value="Wrocław" className="stepThreeSelOpt"
+                                            onClick={this.handleStepThreeDropDownChange}>Wrocław</option>
+                                    <option value="Katowice" className="stepThreeSelOpt"
+                                            onClick={this.handleStepThreeDropDownChange}>Katowice</option>
+                                </div>
                                 <div className="helpGroups">
+                                    {this.state.stepThreeCheckFormAlert}
                                     <span className="helpGroupsHeader">Komu chcesz pomóc?</span>
                                     <label className="helpGroupsLabel">
-                                        <input type="checkbox" className="helpGroupsInput"/>
+                                        <input type="checkbox"
+                                               className="helpGroupsInput"
+                                               name="children"
+                                               checked={this.state.children}
+                                               onChange={this.handleStepThreeChildrenChange}/>
                                         <span className="helpGroupsCheckmark">dzieciom</span>
                                     </label>
                                     <label className="helpGroupsLabel">
-                                        <input type="checkbox" className="helpGroupsInput"/>
+                                        <input type="checkbox"
+                                               className="helpGroupsInput"
+                                               name="mothers"
+                                               checked={this.state.mothers}
+                                               onChange={this.handleStepThreeMothersChange}/>
                                         <span className="helpGroupsCheckmark">samotnym matkom</span>
                                     </label>
                                     <label className="helpGroupsLabel">
-                                        <input type="checkbox" className="helpGroupsInput"/>
+                                        <input type="checkbox"
+                                               className="helpGroupsInput"
+                                               name="homeless"
+                                               checked={this.state.homeless}
+                                               onChange={this.handleStepThreeHomelessChange}/>
                                         <span className="helpGroupsCheckmark">bezdomnym</span>
                                     </label><br/>
                                     <label className="helpGroupsLabel">
-                                        <input type="checkbox" className="helpGroupsInput"/>
+                                        <input type="checkbox"
+                                               className="helpGroupsInput"
+                                               name="disabled"
+                                               checked={this.state.disabled}
+                                               onChange={this.handleStepThreeDisabledChange}/>
                                         <span className="helpGroupsCheckmark">niepełnosprawnym</span>
                                     </label>
                                     <label className="helpGroupsLabel">
-                                        <input type="checkbox" className="helpGroupsInput"/>
+                                        <input type="checkbox"
+                                               className="helpGroupsInput"
+                                               name="older"
+                                               checked={this.state.older}
+                                               onChange={this.handleStepThreeOlderChange}/>
                                         <span className="helpGroupsCheckmark">osobom starszym</span>
                                     </label>
-                                    <label className="localizationSpecificLabel">Wpisz nazwę konkretnej organizacji
+                                    <label className="organizationSpecificLabel">Wpisz nazwę konkretnej organizacji
                                         (opcjonalnie)
-                                        <input type="text" className="localizationSpecific"/></label>
+                                        <input type="text"
+                                               className="organizationSpecific"
+                                               value={this.state.orgName}
+                                               name="orgName"
+                                               onChange={this.handleOrgNameChange}/>
+                                    </label>
                                 </div>
                             </form>
                             <button className="stepThreeRevBtn" onClick={this.handleShowStep2}>Wstecz</button>
@@ -323,36 +517,58 @@ class Form extends Component {
                                     <span className="addressDataHeader">Adres odbioru:</span>
                                     <label className="addressLabel">
                                         <span className="addressLabelSpan">Ulica</span>
-                                        <input type="text" className="addressInput street"/>
+                                        <input type="text" className="addressInput street"
+                                               value={this.state.street}
+                                               name="street"
+                                               onChange={this.handleStreetChange}/>
                                     </label>
                                     <label className="addressLabel">
                                         <span className="addressLabelSpan">Miasto</span>
-                                        <input type="text" className="addressInput city"/>
+                                        <input type="text" className="addressInput city"
+                                               value={this.state.city}
+                                               name="city"
+                                               onChange={this.handleCityChange}/>
                                     </label>
                                     <label className="addressLabel">
                                         <span className="addressLabelSpan">Kod<br/>pocztowy</span>
-                                        <input type="text" className="addressInput postCode"/>
+                                        <input type="text" className="addressInput postCode"
+                                               value={this.state.zipCode}
+                                               name="zipCode"
+                                               onChange={this.handleZipCodeChange}/>
                                     </label>
                                     <label className="addressLabel">
                                         <span className="addressLabelSpan">Numer<br/>telefonu</span>
-                                        <input type="text" className="addressInput phone"/>
+                                        <input type="text" className="addressInput phone"
+                                               value={this.state.phone}
+                                               name="phone"
+                                               onChange={this.handlePhoneChange}/>
                                     </label>
                                 </div>
                                 <div className="time_data_form">
                                     <span className="timeDataHeader">Termin odbioru</span>
                                     <label className="timeLabel">
                                         <span className="timeLabelSpan">Data</span>
-                                        <input type="text" className="dataInput date"/>
+                                        <input type="text" className="dataInput date"
+                                               value={this.state.date}
+                                               name="date"
+                                               onChange={this.handleDateChange}/>
                                     </label>
                                     <label className="timeLabel">
                                         <span className="timeLabelSpan">Godzina</span>
-                                        <input type="text" className="dataInput time"/>
+                                        <input type="text" className="dataInput time"
+                                               value={this.state.hour}
+                                               name="hour"
+                                               onChange={this.handleHourChange}/>
                                     </label>
                                     <label className="timeLabel note">
                                         <span className="timeLabelSpan">Uwagi<br/>dla kuriera</span>
-                                        <textarea className="dataInput note"/>
+                                        <textarea className="dataInput note"
+                                                  value={this.state.info}
+                                                  name="info"
+                                                  onChange={this.handleInfoChange}/>
                                     </label>
                                 </div>
+                                {this.state.stepFourAlert}
                             </form>
                             <button className="stepFourRevBtn" onClick={this.handleShowStep3}>Wstecz</button>
                             <button className="stepFourFwdBtn" onClick={this.handleShowSummary}>Dalej</button>
