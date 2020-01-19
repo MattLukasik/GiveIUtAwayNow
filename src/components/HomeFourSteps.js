@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './HomeFourSteps.scss';
 import {Link as LinkR} from "react-router-dom";
+import {Link} from "react-scroll";
 
 class HomeFourSteps extends Component {
 
